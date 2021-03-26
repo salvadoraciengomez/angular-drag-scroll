@@ -1,0 +1,27 @@
+<h1>VirtualScroll</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <button (click)="irAlFinal()" class="btn btn-primary">Ir al final</button>
+  </div>
+  <div class="col">
+    <button (click)="irAlPrincipio()" class="btn btn-primary text-right">Ir al principio</button>
+  </div>
+  <div class="col">
+    <button (click)="irAlMedio()" class="btn btn-primary">Ir a la mitad</button>
+  </div>
+</div>
+
+<cdk-virtual-scroll-viewport [itemSize]="50" class="example-viewport list-container list-group">
+
+  <div *cdkVirtualFor="let item of personas;
+                       let index = index;
+                       let count = count;"
+                       class="list-group-item">
+    <div class="example-item-detail">Item: {{item}}</div>
+    <div class="example-item-detail">Index: {{index}}</div>
+    <div class="example-item-detail">Count: {{count}}</div>
+
+  </div>
+</cdk-virtual-scroll-viewport>
